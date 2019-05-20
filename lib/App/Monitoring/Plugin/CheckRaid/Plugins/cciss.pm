@@ -139,6 +139,9 @@ sub detect {
 	}
 	undef($fh);
 
+	# last chance: look for ciss devices in /dev
+	@devs = </dev/ciss*>;
+
 	return wantarray ? @devs : \@devs;
 }
 
