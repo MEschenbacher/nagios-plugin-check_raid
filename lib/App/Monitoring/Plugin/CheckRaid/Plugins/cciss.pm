@@ -367,7 +367,9 @@ sub parse {
 		# show_disk_map("  Drives currently substituted for by spares:", file, fd, id, controller_lun, ctlrtype,
 		if (/^  Failed drives:/ ||
 			/^  'Replacement' drives:/ ||
-			/^  Drives currently substituted for by spares:/
+			/^  Drives currently substituted for by spares:/ ||
+			/^                 Total cache memory:/ ||
+			/^                        Cache Ratio:/
 		) {
 			# could store this somewhere, ignore for now
 			$this->consume_disk_map($fh);
