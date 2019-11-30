@@ -271,7 +271,7 @@ sub parse {
 		if (my($file, $board_name, $raid_level, $volume_number, $certain, $status, $spare_drive_status) = m{
 			^(/dev/[^:]+):\s        # File
 			\(([^)]+)\)\s           # Board Name
-			(RAID\s\d+|\([^)]+\))\s # RAID level
+			(RAID\s\d+[\d()+]*)\s   # RAID level
 			Volume\s(\d+)           # Volume number
 			(\(\?\))?\s             # certain?
 			status:\s(.*?)\.        # status (without a dot)
