@@ -374,7 +374,8 @@ sub parse {
 			/^  'Replacement' drives:/ ||
 			/^  Drives currently substituted for by spares:/ ||
 			/^                 Total cache memory:/ ||
-			/^                        Cache Ratio:/
+			/^                        Cache Ratio:/ ||
+			/^   Auto-reconfigured on last reset/
 		) {
 			# could store this somewhere, ignore for now
 			$this->consume_disk_map($fh);
