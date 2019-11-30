@@ -175,7 +175,9 @@ sub cciss_vol_status_version {
 		close $fh;
 		return 0 unless $line;
 
-		if (my($v) = $line =~ /^cciss_vol_status version ([\d.]+)$/) {
+		# sometimes, the version indicator does not end with the version
+		# e.g. cciss_vol_status version 1.12(without support for MSA1000)
+		if (my($v) = $line =~ /^cciss_vol_status version ([\d.]+)/) {
 			return 0 + $v;
 		}
 		return 0;
